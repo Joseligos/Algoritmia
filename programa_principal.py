@@ -1,6 +1,8 @@
 import tkinter
 from tkinter import *
 from tkinter import messagebox
+from tkinter import ttk
+from PIL import Image, ImageTk
 import pymysql
 def menu_pantalla():
     global pantalla
@@ -134,17 +136,6 @@ def menu_pantalla_principal():
 
     pantalla_principal.iconbitmap("logo.ico")
 
-    logo_image = Image.open("logo.png")
-    logo_image = logo_image.resize((200, 200), Image.ANTIALIAS)
-    logo_photo = ImageTk.PhotoImage(logo_image)
-
-    # Crear el widget Label con la imagen
-    label_logo = Label(pantalla_principal, image=logo_photo)
-    label_logo.pack()
-
-    # Asignar la imagen a una variable global para evitar que sea eliminada
-    pantalla_principal.logo_photo = logo_photo
-
     Label(pantalla_principal, text="SELECCIONA EL SERVICIO QUE DESEAS  EMPLEAR:",bg="#A8A8A8",fg="white",width="300",height="2", font=("Arial", 15)).pack()
 
     Label (pantalla_principal, text="").pack()
@@ -162,10 +153,6 @@ def registro_usuario():
     pantalla_r_u.geometry("800x600")
     pantalla_r_u.title("M&M REGISTRO USUARIO")
     pantalla_r_u.iconbitmap("logo.ico")
-    image=PhotoImage(file="logo.png")
-    image=image.subsample(1,1)
-    label=Label(image=image)
-    label.pack()
 
     global nombrecliente
     global dnicliente
